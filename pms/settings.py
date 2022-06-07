@@ -34,6 +34,8 @@ ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS').split(",")
 # Application definition
 
 INSTALLED_APPS = [
+    'users',
+
     'django_extensions',
     'rest_framework',
     'django_filters',

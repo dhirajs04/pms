@@ -11,9 +11,7 @@ create table if not exists users
   is_mob_logged boolean default false,
   is_verified   boolean default false,
   is_active     boolean default false,
-  created_by    smallint     not null,
   created_at    timestamp    not null,
-  updated_by    smallint,
   updated_at    timestamp,
 
   primary key (user_id)
@@ -23,10 +21,6 @@ create table if not exists role
 (
   role_id    serial       not null,
   name       varchar(150) not null unique,
-  created_by smallint     not null,
-  created_at timestamp    not null,
-  updated_by smallint,
-  updated_at timestamp,
 
   primary key (role_id)
 );
