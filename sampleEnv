@@ -1,0 +1,24 @@
+DJANGO_DEBUG=TRUE
+
+DJANGO_SECRET_KEY=
+
+DJANGO_ALLOWED_HOSTS=.localhost, 127.0.0.1
+
+DB_HOST=localhost
+
+DB_NAME=
+
+DB_USER=
+
+DB_PASSWORD=
+
+BASE_URL=http://localhost:8000
+
+STATIC_ROOT=/yourPCRoute/static
+#Example = /home/user/workspace_medias/pms/static
+
+MEDIA_ROOT=/yourPCRoute/media
+#Example = /home/user/workspace_medias/pms/media
+
+PROTECTED_MEDIA_ROOT=/yourPCRoute/protected-media
+#Example = /home/user/workspace_medias/pms/protected-media
