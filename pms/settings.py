@@ -35,6 +35,7 @@ ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS').split(",")
 
 INSTALLED_APPS = [
     'users',
+    'roles',
 
     'django_extensions',
     'rest_framework',
@@ -149,6 +150,21 @@ PROTECTED_MEDIA_ROOT = os.getenv('PROTECTED_MEDIA_ROOT')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-REST_FRAMEWORK = {
+AUTH_USER_MODEL = 'users.User'
 
+REST_FRAMEWORK = {
+    # 'DEFAULT_PAGINATION_CLASS': 'jbs_rms.pagination.CustomPagination',
+    # 'PAGE_SIZE': 20,
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'users.authentication.CustomJWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    ),
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
 }
