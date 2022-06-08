@@ -15,19 +15,18 @@ pip install -r requirements.txt
 ```
 *Note: You may need to replace pip with pip3 for python3.*
 
+- Run Migrations.
+```python
+python manage.py migrate
+```
+
+
 - Run the sever using following command
 ```python
 python manage.py runserver
 ```
 *Note: You may need to replace python with python3 for python3.*
 
-#### Things to Note
-
-- Migrations are turned off. Only initial default migrations need to be applied.
-```python
-python manage.py migrate
-```
-- To create Db tables, please use the file **db.sql** file in the project's root directory.
 
 ## License
 
