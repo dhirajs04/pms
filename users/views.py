@@ -1,3 +1,4 @@
+from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -13,7 +14,7 @@ class UserLogin(APIView):
             validate_data = serializer.validated_data
 
             data = {
-                'token': validate_data.get('token'),
+                'token': validate_data.get('token')
             }
 
             return Response(data)

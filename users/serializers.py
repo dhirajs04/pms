@@ -37,7 +37,7 @@ class UserLoginSerializer(serializers.Serializer):
                 payload = {
                     'id': user.pk,
                     'username': user.username,
-                    'role': user.role
+                    'role': user.role.name
                 }
 
                 key = settings.SECRET_KEY
@@ -45,7 +45,7 @@ class UserLoginSerializer(serializers.Serializer):
                 token = jwt.encode(
                     payload,
                     key,
-                ).decode('utf-8')
+                )
 
                 user.web_token = token
                 user.save()
@@ -56,7 +56,7 @@ class UserLoginSerializer(serializers.Serializer):
                 }
             else:
                 msg = 'Could not login with given credentials'
-                raise serializers.ValidationError(msg)
+                raise serializers.ValidationError({'details': msg})
         else:
             msg = "Please Provide username and password"
-            raise serializers.ValidationError(msg)
+            raise serializers.ValidationError({'details': msg})
