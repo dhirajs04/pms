@@ -8,7 +8,7 @@ class RoleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Role
         fields = [
-            'role_id',
+            'id',
             'name'
         ]
 
@@ -27,6 +27,6 @@ class RoleEditSerializer(serializers.ModelSerializer):
     class Meta:
         model = Role
         fields = [
-            'role_id',
+            'id',
             'name'
         ]
